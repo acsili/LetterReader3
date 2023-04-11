@@ -1,0 +1,93 @@
+﻿<Window x:Class="LetterReader3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LetterReader3"
+        mc:Ignorable="d"
+        Title="LetterReader3" Height="720" Width="1000"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent">
+
+    <Border Background="#eff2f7" CornerRadius="30">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="1" Background="#623ed0" CornerRadius="0 50 0 30">
+                    <DockPanel Margin="0 50 0 0">
+                        <Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100"
+                                DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
+                            <Ellipse>
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="/iconLR3.png"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Border>
+
+                        <TextBlock Text="LetterReader3" HorizontalAlignment="Left" Margin="20 40 35 0"
+                                   Foreground="White" FontSize="22" FontWeight="SemiBold"
+                                   DockPanel.Dock="Top" TextAlignment="Center"/>
+
+                        <Separator Margin="25" DockPanel.Dock="Top" Height="0.8"
+                                   Background="#7e5fdc"/>
+
+                        <StackPanel DockPanel.Dock="Top">
+                            <Button Background="#623ed0" Margin="20 0 20 0" Name="ButtonOpenFile" Click="ButtonOpenFile_Click">
+                                <TextBlock Foreground="White" FontSize="22" Text="Открыть файл"/>
+                            </Button>
+
+                            <ComboBox Name="comboBoxLang" FontSize="22" Background="#623ed0" Margin="20 20 20 0"/>
+
+                            <ComboBox Name="comboBoxSpeecher" FontSize="22" Background="#623ed0" Margin="20 20 20 0"/>
+
+                            <Button Background="#623ed0" Margin="20 20 20 0" Name="ButtonConvert" Click="ButtonConvert_Click">
+                                <TextBlock Foreground="White" FontSize="22" Text="Озвучить"/>
+                            </Button>
+                            
+                            <Button Background="#623ed0" Margin="20 20 20 0" Name="ButtonPause" Click="ButtonPause_Click">
+                                <TextBlock Foreground="White" FontSize="22" Text="Остановить"/>
+                            </Button>
+                            
+                            <Button Background="#623ed0" Margin="20 20 20 0" Name="ButtonResume" Click="ButtonResume_Click">
+                                <TextBlock Foreground="White" FontSize="22" Text="Продолжить"/>
+                            </Button>
+                            
+                        </StackPanel>
+
+                    </DockPanel>
+                </Border>
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="1" Background="#696ed0" CornerRadius="30" Margin="15">
+                    <Border Width="700" Height="600" Padding="3" Background="White" CornerRadius="30"
+                                HorizontalAlignment="Center" Margin="20">
+                        <Image x:Name="image"/>
+                    </Border>
+                </Border>
+               
+
+            </Grid>
+
+        </Grid>
+    </Border>
+
+
+</Window>
