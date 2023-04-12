@@ -24,18 +24,18 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Border Grid.Row="1" Background="#623ed0" CornerRadius="0 50 0 30">
+                <Border Grid.Row="1" Background="#796ed5" CornerRadius="0 50 0 30">
                     <DockPanel Margin="0 50 0 0">
                         <Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100"
                                 DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
                             <Ellipse>
                                 <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/iconLR3.png"/>
+                                    <ImageBrush ImageSource="/Icon/iconLR3.png"/>
                                 </Ellipse.Fill>
                             </Ellipse>
                         </Border>
 
-                        <TextBlock Text="LetterReader3" HorizontalAlignment="Left" Margin="20 40 35 0"
+                        <TextBlock Text="LetterReader3" HorizontalAlignment="Left" Margin="20 10 35 0"
                                    Foreground="White" FontSize="22" FontWeight="SemiBold"
                                    DockPanel.Dock="Top" TextAlignment="Center"/>
 
@@ -47,9 +47,7 @@
                                 <TextBlock Foreground="White" FontSize="22" Text="Открыть файл"/>
                             </Button>
 
-                            <ComboBox Name="comboBoxLang" FontSize="22" Background="#623ed0" Margin="20 20 20 0"/>
-
-                            <ComboBox Name="comboBoxSpeecher" FontSize="22" Background="#623ed0" Margin="20 20 20 0"/>
+                            <ComboBox Name="comboBoxLang" FontSize="22" Background="#623ed0" Margin="20 20 20 0" SelectionChanged="comboBoxLang_SelectionChanged"/>
 
                             <Button Background="#623ed0" Margin="20 20 20 0" Name="ButtonConvert" Click="ButtonConvert_Click">
                                 <TextBlock Foreground="White" FontSize="22" Text="Озвучить"/>
@@ -75,8 +73,23 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-
-                <Border Grid.Row="1" Background="#696ed0" CornerRadius="30" Margin="15">
+                <Border Width="30" Height="30" Background="White" CornerRadius="100"
+                                 HorizontalAlignment="Right" Margin="20 20 20 0">
+                    <Ellipse MouseLeftButtonDown="CloseApp">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="\Icon\73-736698_multiply-svg-png-icon-cross-sign-clipart-black.png"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Border>
+                <Border Width="30" Height="30" Background="White" CornerRadius="100"
+                                 HorizontalAlignment="Right" Margin="20 20 60 0">
+                    <Ellipse MouseLeftButtonDown="MinimizeApp">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="\Icon\porozhek-gibkii-dlja-pola-cezar-flex-line-38mm-chernyi-90.jpg"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Border>
+                <Border Grid.Row="1" Background="#696ed0" CornerRadius="30" Margin="20 20 0 0">
                     <Border Width="700" Height="600" Padding="3" Background="White" CornerRadius="30"
                                 HorizontalAlignment="Center" Margin="20">
                         <Image x:Name="image"/>

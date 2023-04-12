@@ -1,27 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Speech.Synthesis;
 using LetterReader3.TextConverter;
 using System.Windows.Controls;
+using System.Windows;
 
 namespace LetterReader3.Speecher
 {
     internal class NewSpeecher
     {
-        private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
+        public SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private NewTextConverter newTextConverter = new NewTextConverter();
 
-        public void ConvertToSpeech(string filePath, ComboBox comboBox)
+        public void ConvertToSpeech(string filePath, ComboBox comboBoxLang)
         {
-            newTextConverter.SetLanguages(comboBox);
             string text = newTextConverter.ConvertToText(filePath);
-            if (text != "")
+
+            try
             {
-                synthesizer.SelectVoice(comboBox.Text);
+                synthesizer.SelectVoice(comboBoxLang.Text);
                 synthesizer.SpeakAsync(text);
+            }
+            catch
+            {
+                if (comboBoxLang.Text == "")
+                    MessageBox.Show("Язык не выбран");
+                else if (text == "")
+                    MessageBox.Show("Тект не выбран");
             }
         }
         public void PauseSpeech()
@@ -36,13 +40,6 @@ namespace LetterReader3.Speecher
             if (synthesizer.State == SynthesizerState.Paused)
             {
                 synthesizer.Resume();
-            }
-        }
-        public void SetSpeechLanguage(ComboBox comboBox)
-        {
-            foreach (var voice in synthesizer.GetInstalledVoices())
-            {
-                comboBox.Items.Add(voice.VoiceInfo.Name);
             }
         }
     }

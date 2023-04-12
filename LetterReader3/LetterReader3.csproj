@@ -97,6 +97,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Speecher\NewSpeecher.cs" />
+    <Compile Include="TextConverter\Languages\NewLanguage.cs" />
     <Compile Include="TextConverter\NewTextConverter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -140,10 +141,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Icon\" />
+    <Resource Include="Icon\iconLR3.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="iconLR3.png" />
+    <Resource Include="Icon\2897.750x0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\73-736698_multiply-svg-png-icon-cross-sign-clipart-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\png-transparent-computer-icons-roll-design-material-angle-text-share-icon-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\porozhek-gibkii-dlja-pola-cezar-flex-line-38mm-chernyi-90.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\IronOcr.2023.4.13\build\net\IronOcr.targets" Condition="Exists('..\packages\IronOcr.2023.4.13\build\net\IronOcr.targets')" />

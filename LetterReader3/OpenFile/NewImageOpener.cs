@@ -1,18 +1,12 @@
-﻿using IronOcr;
-using Microsoft.Win32;
-using SixLabors.ImageSharp;
+﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
 namespace LetterReader3.OpenFile
 {
     internal class NewImageOpener
     {
-        public string filePath { get; private set; }
+        public string FilePath { get; private set; }
 
         public BitmapImage OpenImage()
         {
@@ -25,7 +19,7 @@ namespace LetterReader3.OpenFile
 
             if (openFileDialog.ShowDialog() == true)
             {
-                filePath = openFileDialog.FileName;
+                FilePath = openFileDialog.FileName;
                 return new BitmapImage(new Uri(openFileDialog.FileName));
             }
             return null;
