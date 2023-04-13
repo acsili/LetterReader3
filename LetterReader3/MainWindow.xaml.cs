@@ -20,7 +20,7 @@ namespace LetterReader3
         {
             InitializeComponent();
             newLanguage.SetLanguages(comboBoxLang);
-            newLanguage.SetSpeechLanguage(newSpeecher.synthesizer);
+            newLanguage.SetSpeechLanguage(comboBoxSpeecher, newSpeecher.synthesizer);
         }
 
         private void ButtonOpenFile_Click(object sender, RoutedEventArgs e)
@@ -30,7 +30,7 @@ namespace LetterReader3
 
         private void ButtonConvert_Click(object sender, RoutedEventArgs e)
         {
-            newSpeecher.ConvertToSpeech(newImageOpener.FilePath, comboBoxLang);
+            newSpeecher.ConvertToSpeech(newImageOpener.FilePath, comboBoxSpeecher);
         }
 
         private void ButtonPause_Click(object sender, RoutedEventArgs e)
@@ -55,8 +55,7 @@ namespace LetterReader3
 
         private void comboBoxLang_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            newLanguage.GetLanguage(comboBoxLang, NewTextConverter.IronOcr, newSpeecher.synthesizer);
-            
+            newLanguage.GetLanguage(comboBoxLang, NewTextConverter.IronOcr);
         }
     }
 }

@@ -48,7 +48,7 @@
                             </Button>
 
                             <ComboBox Name="comboBoxLang" FontSize="22" Background="#623ed0" Margin="20 20 20 0" SelectionChanged="comboBoxLang_SelectionChanged"/>
-
+                            <ComboBox Name="comboBoxSpeecher" FontSize="22" Background="#623ed0" Margin="20 20 20 0"/>
                             <Button Background="#623ed0" Margin="20 20 20 0" Name="ButtonConvert" Click="ButtonConvert_Click">
                                 <TextBlock Foreground="White" FontSize="22" Text="Озвучить"/>
                             </Button>

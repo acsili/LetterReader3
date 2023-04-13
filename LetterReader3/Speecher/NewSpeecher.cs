@@ -11,18 +11,18 @@ namespace LetterReader3.Speecher
         public SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private NewTextConverter newTextConverter = new NewTextConverter();
 
-        public void ConvertToSpeech(string filePath, ComboBox comboBoxLang)
+        public void ConvertToSpeech(string filePath, ComboBox comboBoxSpeecher)
         {
             string text = newTextConverter.ConvertToText(filePath);
 
             try
             {
-                synthesizer.SelectVoice(comboBoxLang.Text);
+                synthesizer.SelectVoice(comboBoxSpeecher.Text);
                 synthesizer.SpeakAsync(text);
             }
             catch
             {
-                if (comboBoxLang.Text == "")
+                if (comboBoxSpeecher.Text == "")
                     MessageBox.Show("Язык не выбран");
                 else if (text == "")
                     MessageBox.Show("Тект не выбран");
