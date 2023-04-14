@@ -13,7 +13,7 @@ namespace LetterReader3.OpenFile
             OpenFileDialog openFileDialog = new OpenFileDialog()
             {
                 Multiselect = true,
-                Filter = "Image files (*.png;*.jpg)|*.png;*.jpg|All files (*.*)|*.*",
+                Filter = "Image files (*.png;*.jpg)|*.png;*.jpg",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
             };
 

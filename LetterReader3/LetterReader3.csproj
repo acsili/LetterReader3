@@ -163,6 +163,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\IronOcr.2023.4.13\build\net\IronOcr.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronOcr.2023.4.13\build\net\IronOcr.targets'))" />
     <Error Condition="!Exists('..\packages\IronOcr.Languages.Russian.2020.11.2\build\IronOcr.Languages.Russian.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronOcr.Languages.Russian.2020.11.2\build\IronOcr.Languages.Russian.targets'))" />
+    <Error Condition="!Exists('..\packages\IronOcr.Languages.Japanese.2020.11.2\build\IronOcr.Languages.Japanese.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronOcr.Languages.Japanese.2020.11.2\build\IronOcr.Languages.Japanese.targets'))" />
   </Target>
   <Import Project="..\packages\IronOcr.Languages.Russian.2020.11.2\build\IronOcr.Languages.Russian.targets" Condition="Exists('..\packages\IronOcr.Languages.Russian.2020.11.2\build\IronOcr.Languages.Russian.targets')" />
+  <Import Project="..\packages\IronOcr.Languages.Japanese.2020.11.2\build\IronOcr.Languages.Japanese.targets" Condition="Exists('..\packages\IronOcr.Languages.Japanese.2020.11.2\build\IronOcr.Languages.Japanese.targets')" />
 </Project>

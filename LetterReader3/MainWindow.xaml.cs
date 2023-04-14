@@ -13,24 +13,26 @@ namespace LetterReader3
 {
     public partial class MainWindow : Window
     {
-        NewImageOpener newImageOpener = new NewImageOpener();
-        NewSpeecher newSpeecher = new NewSpeecher();
-        NewLanguage newLanguage = new NewLanguage();
+        NewImageOpener newImageOpener;
+        NewSpeecher newSpeecher;
+        NewLanguage newLanguage;
         public MainWindow()
         {
             InitializeComponent();
-            newLanguage.SetLanguages(comboBoxLang);
-            newLanguage.SetSpeechLanguage(comboBoxSpeecher, newSpeecher.synthesizer);
+            newLanguage = new NewLanguage();
+            newLanguage.SetLanguages(ComboBoxLang);
         }
 
         private void ButtonOpenFile_Click(object sender, RoutedEventArgs e)
         {
+            newImageOpener = new NewImageOpener();
             image.Source = newImageOpener.OpenImage();
         }
 
         private void ButtonConvert_Click(object sender, RoutedEventArgs e)
         {
-            newSpeecher.ConvertToSpeech(newImageOpener.FilePath, comboBoxSpeecher);
+            newSpeecher = new NewSpeecher();
+            newSpeecher.ConvertToSpeech(newImageOpener.FilePath, newLanguage.speecher);
         }
 
         private void ButtonPause_Click(object sender, RoutedEventArgs e)
@@ -53,9 +55,9 @@ namespace LetterReader3
             this.WindowState = WindowState.Minimized;
         }
 
-        private void comboBoxLang_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ComboBoxLang_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            newLanguage.GetLanguage(comboBoxLang, NewTextConverter.IronOcr);
+            newLanguage.GetLanguage(ComboBoxLang, NewTextConverter.IronOcr);
         }
     }
 }

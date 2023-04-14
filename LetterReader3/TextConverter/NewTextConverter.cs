@@ -1,5 +1,6 @@
 ﻿using IronOcr;
 using System;
+using System.Windows;
 
 namespace LetterReader3.TextConverter
 {
@@ -9,8 +10,17 @@ namespace LetterReader3.TextConverter
 
         public string ConvertToText(string filePath)
         {
-            var Result = IronOcr.Read(filePath);
-            return Result.Text;
+            try
+            {
+                var Result = IronOcr.Read(filePath);
+                return Result.Text;
+            }
+            catch 
+            {
+                MessageBox.Show("No picture");
+                return "";
+            }
+            
         }
         
     }

@@ -44,21 +44,21 @@
 
                         <StackPanel DockPanel.Dock="Top">
                             <Button Background="#623ed0" Margin="20 0 20 0" Name="ButtonOpenFile" Click="ButtonOpenFile_Click">
-                                <TextBlock Foreground="White" FontSize="22" Text="Открыть файл"/>
+                                <TextBlock Foreground="White" FontSize="22" Text="Open file"/>
                             </Button>
 
-                            <ComboBox Name="comboBoxLang" FontSize="22" Background="#623ed0" Margin="20 20 20 0" SelectionChanged="comboBoxLang_SelectionChanged"/>
-                            <ComboBox Name="comboBoxSpeecher" FontSize="22" Background="#623ed0" Margin="20 20 20 0"/>
+                            <ComboBox Name="ComboBoxLang" FontSize="22" Background="#623ed0" Margin="20 20 20 0" SelectionChanged="ComboBoxLang_SelectionChanged"/>
+                            
                             <Button Background="#623ed0" Margin="20 20 20 0" Name="ButtonConvert" Click="ButtonConvert_Click">
-                                <TextBlock Foreground="White" FontSize="22" Text="Озвучить"/>
+                                <TextBlock Foreground="White" FontSize="22" Text="Speak"/>
                             </Button>
                             
                             <Button Background="#623ed0" Margin="20 20 20 0" Name="ButtonPause" Click="ButtonPause_Click">
-                                <TextBlock Foreground="White" FontSize="22" Text="Остановить"/>
+                                <TextBlock Foreground="White" FontSize="22" Text="Pause"/>
                             </Button>
                             
                             <Button Background="#623ed0" Margin="20 20 20 0" Name="ButtonResume" Click="ButtonResume_Click">
-                                <TextBlock Foreground="White" FontSize="22" Text="Продолжить"/>
+                                <TextBlock Foreground="White" FontSize="22" Text="Resume"/>
                             </Button>
                             
                         </StackPanel>
