@@ -8,6 +8,9 @@ namespace LetterReader3.OpenFile
     {
         public string FilePath { get; private set; }
 
+        /// <summary>
+        /// Method opens PNG, JPG image using OpenFileDialog
+        /// </summary>
         public BitmapImage OpenImage()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog()

@@ -11,10 +11,13 @@ namespace LetterReader3.Speecher
         public SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private NewTextConverter newTextConverter = new NewTextConverter();
 
+        /// <summary>
+        /// Method asynchronously converts text to speech
+        /// </summary>
+        /// <param name="speecher">speecher value which is set in the NewLanguage class</param>
+        /// <param name="filePath">path to PNG, JPG format image</param>
         public void ConvertToSpeech(string filePath, string speecher)
         {
-            
-            
             string text = newTextConverter.ConvertToText(filePath);
 
             try
@@ -29,9 +32,11 @@ namespace LetterReader3.Speecher
                 else if (text == "")
                     MessageBox.Show("Text not selected");
             }
-            
-
         }
+
+        /// <summary>
+        /// Method pauses the speech
+        /// </summary>
         public void PauseSpeech()
         {
             if (synthesizer.State == SynthesizerState.Speaking)
@@ -39,6 +44,10 @@ namespace LetterReader3.Speecher
                 synthesizer.Pause();
             }
         }
+
+        /// <summary>
+        /// Method resumes the speech
+        /// </summary>
         public void ResumeSpeech()
         {
             if (synthesizer.State == SynthesizerState.Paused)
