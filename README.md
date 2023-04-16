@@ -1,11 +1,13 @@
 
 <p align="left">
-<img src="https://github.com/IlyaOvchinnikov-0/LetterReader3/blob/main/LetterReader3/Icon/iconLR3.png" width="70" />
+<img src="https://github.com/IlyaOvchinnikov-0/LetterReader3/blob/main/LetterReader3/Icon/iconLR3.png" width="60" />
 </p>
 
 # LetterReader3
 
 ## This application can convert any text from image to speech. LR3 has two languages that can be used when converting text: Russian and English.
+
+<img src="https://github.com/IlyaOvchinnikov-0/LetterReader3/blob/main/Gif/snsn222334432.gif" width="400" />
 
 ## Used: 
 > ### .NETFramework 4.8
