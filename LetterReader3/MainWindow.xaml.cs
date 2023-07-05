@@ -8,6 +8,7 @@ using LetterReader3.TextConverter.Languages;
 using IronOcr;
 using System.Speech.Synthesis;
 using System.Windows.Controls;
+using System.Threading.Tasks;
 
 namespace LetterReader3
 {
@@ -29,10 +30,10 @@ namespace LetterReader3
             image.Source = newImageOpener.OpenImage();
         }
 
-        private void ButtonConvert_Click(object sender, RoutedEventArgs e)
+        async private void ButtonConvert_Click(object sender, RoutedEventArgs e)
         {
             newSpeecher = new NewSpeecher();
-            newSpeecher.ConvertToSpeech(newImageOpener.FilePath, newLanguage.speecher);
+            await Task.Run(() => newSpeecher.ConvertToSpeech(newImageOpener.FilePath, newLanguage.speecher));
         }
 
         private void ButtonPause_Click(object sender, RoutedEventArgs e)
